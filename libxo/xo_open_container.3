@@ -2,16 +2,16 @@
 .\" # Copyright (c) 2014, Juniper Networks, Inc.
 .\" # All rights reserved.
 .\" # This SOFTWARE is licensed under the LICENSE provided in the
-.\" # ../Copyright file. By downloading, installing, copying, or 
+.\" # ../Copyright file. By downloading, installing, copying, or
 .\" # using the SOFTWARE, you agree to be bound by the terms of that
 .\" # LICENSE.
 .\" # Phil Shafer, July 2014
-.\" 
-.Dd December 4, 2014
+.\"
+.Dd February 9, 2024
 .Dt LIBXO 3
 .Os
 .Sh NAME
-.Nm xo_open_container , xo_open_container_h , xo_open_container_hd , xo_open_container_d
+.Nm xo_open_container , xo_open_container_h , xo_open_container_hd , xo_open_container_d ,
 .Nm xo_close_container , xo_close_container_h , xo_close_container_hd , xo_close_container_d
 .Nd open (and close) container constructs
 .Sh LIBRARY
@@ -63,7 +63,7 @@ functions.
 Each open call should have a matching close call.
 If the
 .Dv XOF_WARN
-flag is set and the name given does not match the name of 
+flag is set and the name given does not match the name of
 the currently open
 container, a warning will be generated.
 .Bd -literal -offset indent -compact
@@ -184,8 +184,8 @@ containers, lists, and instances.
 A warning is generated when the name given to the close function
 and the name recorded do not match.
 .Sh SEE ALSO
-.Xr xo_emit 3 ,
-.Xr libxo 3
+.Xr libxo 3 ,
+.Xr xo_emit 3
 .Sh HISTORY
 The
 .Nm libxo
@@ -195,4 +195,3 @@ library first appeared in
 .Nm libxo
 was written by
 .An Phil Shafer Aq Mt phil@freebsd.org .
-

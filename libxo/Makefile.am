@@ -30,14 +30,14 @@ LIBS = \
     ${GETTEXT_LIBS}
 
 libxoinc_HEADERS = \
-     xo.h \
-     xo_encoder.h
+    xo.h \
+    xo_encoder.h
 
 noinst_HEADERS = \
-     xo_buf.h \
-     xo_explicit.h \
-     xo_humanize.h \
-     xo_wcwidth.h
+    xo_buf.h \
+    xo_explicit.h \
+    xo_humanize.h \
+    xo_wcwidth.h
 
 libxo_la_SOURCES = \
     libxo.c \
@@ -74,7 +74,7 @@ man5_files = \
     xo_format.5
 
 man7_files = \
-    libxo-csv.7 \
+    libxo\-csv.7 \
     xo_options.7
 
 man_MANS = ${man3_files} ${man5_files} ${man7_files}
@@ -85,7 +85,7 @@ EXTRA_DIST = \
 call-graph:
 	${RM} libxo.o
 	${MAKE} CC="clang -Xclang -analyze -Xclang \
-            -analyzer-checker=debug.ViewCallGraph" libxo.o
+	    -analyzer-checker=debug.ViewCallGraph" libxo.o
 
 install-data-hook:
 	for file in ${man3_files}; do \

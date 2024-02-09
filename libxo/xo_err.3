@@ -2,16 +2,16 @@
 .\" # Copyright (c) 2014, Juniper Networks, Inc.
 .\" # All rights reserved.
 .\" # This SOFTWARE is licensed under the LICENSE provided in the
-.\" # ../Copyright file. By downloading, installing, copying, or 
+.\" # ../Copyright file. By downloading, installing, copying, or
 .\" # using the SOFTWARE, you agree to be bound by the terms of that
 .\" # LICENSE.
 .\" # Phil Shafer, July 2014
-.\" 
-.Dd December 4, 2014
+.\"
+.Dd February 9, 2024
 .Dt LIBXO 3
 .Os
 .Sh NAME
-.Nm xo_err , xo_errc , xo_errx
+.Nm xo_err , xo_errc , xo_errx ,
 .Nm xo_warn , xo_warnx , xo_warn_c , xo_warn_hc
 .Nd emit errors and warnings in multiple output styles
 .Sh LIBRARY
@@ -25,7 +25,7 @@
 .Ft void
 .Fn xo_warn_c "int code" "const char *fmt" "..."
 .Ft void
-.Fn xo_warn_hc "xo_handle_t *xop" "int code, const char *fmt" "..."
+.Fn xo_warn_hc "xo_handle_t *xop" "int code" "const char *fmt" "..."
 .Ft void
 .Fn xo_err "int eval" "const char *fmt" "..."
 .Ft void
@@ -49,8 +49,8 @@ argument is one compatible with
 .Xr printf 3
 rather than
 .Xr xo_emit 3
-to aid in simple conversion.  This means
-these functions make unstructured data.
+to aid in simple conversion.
+This means these functions make unstructured data.
 To generate structured data,
 use the
 .Xr xo_emit_err 3
@@ -69,9 +69,9 @@ parameter.
             xo_err(1, "cannot open file '%s'", filename);
 .Ed
 .Sh SEE ALSO
+.Xr libxo 3 ,
 .Xr xo_emit 3 ,
-.Xr xo_emit_err 3 ,
-.Xr libxo 3
+.Xr xo_emit_err 3
 .Sh HISTORY
 The
 .Nm libxo
@@ -81,4 +81,3 @@ library first appeared in
 .Nm libxo
 was written by
 .An Phil Shafer Aq Mt phil@freebsd.org .
-

@@ -2,18 +2,18 @@
 .\" # Copyright (c) 2014, Juniper Networks, Inc.
 .\" # All rights reserved.
 .\" # This SOFTWARE is licensed under the LICENSE provided in the
-.\" # ../Copyright file. By downloading, installing, copying, or 
+.\" # ../Copyright file. By downloading, installing, copying, or
 .\" # using the SOFTWARE, you agree to be bound by the terms of that
 .\" # LICENSE.
 .\" # Phil Shafer, July 2014
-.\" 
-.Dd December 4, 2014
+.\"
+.Dd February 9, 2024
 .Dt LIBXO 3
 .Os
 .Sh NAME
-.Nm xo_open_list , xo_open_list_h , xo_open_list_hd , xo_open_list_d
-.Nm xo_open_instance , xo_open_instance_h , xo_open_instance_hd , xo_open_instance_d
-.Nm xo_close_instance , xo_close_instance_h , xo_close_instance_hd , xo_close_instance_d
+.Nm xo_open_list , xo_open_list_h , xo_open_list_hd , xo_open_list_d ,
+.Nm xo_open_instance , xo_open_instance_h , xo_open_instance_hd , xo_open_instance_d ,
+.Nm xo_close_instance , xo_close_instance_h , xo_close_instance_hd , xo_close_instance_d ,
 .Nm xo_close_list , xo_close_list_h , xo_close_list_hd , xo_close_list_d
 .Nd open and close lists and instances
 .Sh LIBRARY
@@ -129,7 +129,6 @@ generation of XML and JSON data.
             }
         ]
 .Ed
-.Pp
 .Sh LEAF LISTS
 In contrast to a list of instances, a "leaf list" is list of simple
 values.
@@ -138,14 +137,14 @@ To emit a leaf list, call the
 function using the ""l"" modifier:
 .Bd -literal -offset indent -compact
     for (ip = list; ip->i_title; ip++) {
-	xo_emit("{Lwc:Item}{l:item}\\n", ip->i_title);
+    	xo_emit("{Lwc:Item}{l:item}\\n", ip->i_title);
     }
 .Ed
 .Pp
 The name of the field must match the name of the leaf list.
 .Pp
-In JSON, leaf lists are rendered as arrays of values.  In XML, they
-are rendered as multiple leaf elements.
+In JSON, leaf lists are rendered as arrays of values.
+In XML, they are rendered as multiple leaf elements.
 .Bd -literal -offset indent -compact
     JSON:
         "item": "hammer", "nail"
@@ -154,8 +153,8 @@ are rendered as multiple leaf elements.
         <item>nail</item>
 .Ed
 .Sh SEE ALSO
-.Xr xo_emit 3 ,
-.Xr libxo 3
+.Xr libxo 3 ,
+.Xr xo_emit 3
 .Sh HISTORY
 The
 .Nm libxo
@@ -165,4 +164,3 @@ library first appeared in
 .Nm libxo
 was written by
 .An Phil Shafer Aq Mt phil@freebsd.org .
-

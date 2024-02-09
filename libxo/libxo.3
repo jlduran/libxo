@@ -2,12 +2,12 @@
 .\" # Copyright (c) 2014, Juniper Networks, Inc.
 .\" # All rights reserved.
 .\" # This SOFTWARE is licensed under the LICENSE provided in the
-.\" # ../Copyright file. By downloading, installing, copying, or 
+.\" # ../Copyright file. By downloading, installing, copying, or
 .\" # using the SOFTWARE, you agree to be bound by the terms of that
 .\" # LICENSE.
 .\" # Phil Shafer, July 2014
-.\" 
-.Dd December 8, 2014
+.\"
+.Dd February 9, 2024
 .Dt LIBXO 3
 .Os
 .Sh NAME
@@ -89,7 +89,6 @@ browser (see
 .Nm libxo
 uses command line options to trigger rendering behavior.
 The following options are recognised:
-.Pp
 .Bl -tag -width "--libxo"
 .It
 \-\^\-libxo <options>
@@ -101,7 +100,6 @@ The following options are recognised:
 .Pp
 Options is a comma-separated list of tokens that correspond to output
 styles, flags, or features:
-.Pp
 .Bl -tag -width "12345678"
 .It Sy "Token   Action"
 .It Dv dtrt
@@ -285,7 +283,8 @@ These functions are mildly compatible with their standard libc
 namesakes, but use the format string defined in
 .Xr xo_format 5 .
 While there is an increased cost for converting the strings, the
-output provided can be richer and more useful.   See also
+output provided can be richer and more useful.
+See also
 .Xr xo_err 3
 .It Fn xo_warn
 .It Fn xo_warnx
@@ -380,7 +379,6 @@ Instructs
 to use an alternative set of low-level output functions.
 .El
 .Sh SEE ALSO
-.Xr libxo-csv 7,
 .Xr xo 1 ,
 .Xr xolint 1 ,
 .Xr xo_attr 3 ,
@@ -393,7 +391,6 @@ to use an alternative set of low-level output functions.
 .Xr xo_no_setlocale 3 ,
 .Xr xo_open_container 3 ,
 .Xr xo_open_list 3 ,
-.Xr xo_options 7,
 .Xr xo_parse_args 3 ,
 .Xr xo_set_allocator 3 ,
 .Xr xo_set_flags 3 ,
@@ -401,7 +398,9 @@ to use an alternative set of low-level output functions.
 .Xr xo_set_options 3 ,
 .Xr xo_set_style 3 ,
 .Xr xo_set_writer 3 ,
-.Xr xo_format 5
+.Xr xo_format 5 ,
+.Xr libxo-csv 7 ,
+.Xr xo_options 7
 .Sh HISTORY
 The
 .Nm libxo
@@ -411,4 +410,3 @@ library first appeared in
 .Nm libxo
 was written by
 .An Phil Shafer Aq Mt phil@freebsd.org .
-
