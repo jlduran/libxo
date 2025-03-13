@@ -930,6 +930,8 @@ xo_escape_json (xo_buffer_t *xbp, ssize_t len, xo_xff_flags_t flags UNUSED)
 	    delta += 1;
 	else if (*cp == '\n' || *cp == '\r')
 	    delta += 1;
+	else if (*cp == '\b' || *cp == '\f' || *cp == '\t')
+	    delta += 1;
     }
 
     if (delta == 0)		/* Nothing to escape; bail */
@@ -953,6 +955,15 @@ xo_escape_json (xo_buffer_t *xbp, ssize_t len, xo_xff_flags_t flags UNUSED)
 	    *ip = '\\';
 	} else if (*cp == '\r') {
 	    *ip-- = 'r';
+	    *ip = '\\';
+	} else if (*cp == '\b') {
+	    *ip-- = 'b';
+	    *ip = '\\';
+	} else if (*cp == '\f') {
+	    *ip-- = 'f';
+	    *ip = '\\';
+	} else if (*cp == '\t') {
+	    *ip-- = 't';
 	    *ip = '\\';
 	} else {
 	    *ip = *cp;
